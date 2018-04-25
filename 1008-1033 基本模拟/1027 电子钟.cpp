@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+
+//对各个情况的数字都详细处理，结果存a矩阵中
+//n和m表示该数字在矩阵中所在区域的左上角元素的下标 
 void Process(char a[][12], int n, int m, int num)
 {
 	switch (num) {
@@ -47,7 +50,7 @@ void Process(char a[][12], int n, int m, int num)
 
 int main()
 {
-	char a[3][12] = {0};
+	char a[3][12] = {0};		//结果通过一个矩阵存4个数字形成 
 	int num;
 	
 	while ( scanf("%d", &num) != EOF ) {
@@ -64,7 +67,7 @@ int main()
 				if ( a[i][j] =='|' || a[i][j] == '_' )
 					printf("%c", a[i][j]);
 				else
-					printf("%c", ' ');
+					printf("%c", ' ');		//空白处输出空格 
 			}
 			printf("\n");	
 		}

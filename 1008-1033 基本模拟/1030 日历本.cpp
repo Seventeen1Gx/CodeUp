@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//ÅĞ¶ÏÊÇ·ñÈòÄê 
 int isLeap(int year)
 {
 	if ( year%4 == 0 && year%100 != 0 || year%400 == 0 )
@@ -7,7 +8,9 @@ int isLeap(int year)
 	return 0;
 }
 
-int Zeller(int year, int month, int day)			//²ÌÀÕ¹«Ê½Ëã¸ÃÄê1ÔÂ1ºÅĞÇÆÚ¼¸ 
+
+//²ÌÀÕ¹«Ê½Ëã¸ÃÄê1ÔÂ1ºÅĞÇÆÚ¼¸ 
+int Zeller(int year, int month, int day) 
 {
 	if(month==1||month==2) {						//ÅĞ¶ÏmonthÊÇ·ñÎª1»ò2¡¡
 		year--;
@@ -20,26 +23,30 @@ int Zeller(int year, int month, int day)			//²ÌÀÕ¹«Ê½Ëã¸ÃÄê1ÔÂ1ºÅĞÇÆÚ¼¸
 	while (week<0) { 
 		week += 7;
 	}
-	week %= 7;
+	week %= 7;		//0´ú±íÖÜÈÕ£¬1´ú±íÖÜÒ»£¬ÒÀ´ÎÀàÍÆ 
 	return week;
 } 
 
-void Month(int mon[][21], int m, int start, int days)	//start±íÊ¾¸ÃÔÂ¿ªÊ¼ĞÇÆÚÊı£¬ĞÇÆÚÌì¿´³É0 
+//ÓÃmonth¾ØÕóÀ´´æ´¢ºáÏòÈı¸öÔÂµÄ½á¹û 
+//start±íÊ¾¸ÃÔÂ¿ªÊ¼ĞÇÆÚÊı£¬ĞÇÆÚÌì¿´³É0
+//m±íÊ¾Ã¿ÔÂËùÕ¼ÇøÓòµÄ¿ªÊ¼ÁĞÏÂ±ê
+//days±íÊ¾¸ÃÔÂÌìÊı 
+void Month(int mon[][21], int m, int start, int days)	 
 {
 	int i, j, n, flag;
 	
 	n = 1;
-	flag = 1;				//´¦ÀíÃ¿ÔÂ¿ªÍ·µÄ¿Õ°× 
-	for (i=0; i<6; i++) 
+	flag = 1;				 
+	for (i=0; i<6; i++)						//´¦Àí·¶Î§Îª0ÖÁ5ĞĞ£¬mÖÁm+6ÁĞ 
 		for (j=m; j<m+7; j++) {
-			if ( flag && j<m+start ) {
+			if ( flag && j<m+start ) {		//´¦ÀíÃ¿ÔÂ¿ªÍ·µÄ¿Õ°×
 				mon[i][j] = 0;				
-			} else if ( days > 0 ) {
+			} else if ( days > 0 ) {		//´Ó1ºÅ¿ªÊ¼Ìî 
 				flag = 0;
 				mon[i][j] = n;
 				n++;
 				days--;	
-			} else {
+			} else {						//´¦Àí½áÎ²¿Õ°× 
 				mon[i][j] = 0; 
 			}
 		}	
@@ -48,6 +55,7 @@ void Month(int mon[][21], int m, int start, int days)	//start±íÊ¾¸ÃÔÂ¿ªÊ¼ĞÇÆÚÊı£
 int main()
 {									
 	int year, start, Feb_days;
+	//ºáÏòÈı¸öÔÂËùÕ¼ÇøÓòÀ´6*21¸ö¸ñ×Ó 
 	int month[6][21];
 	while (scanf("%d", &year) != EOF) {
 		if ( isLeap(year) )
@@ -57,15 +65,23 @@ int main()
 	
 		printf("                              %d                             \n\n", year);
 	
+		//´¦ÀíºáÏòÈı¸öÔÂ 
 		printf("      January               February               March        \n");
 		printf("Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n");
+		//¸ÃÄê1ÔÂ1ÈÕÆğÊ¼ĞÇÆÚ 
 		start = Zeller(year, 1, 1);
+		//·¶Î§Îª0ÖÁ5ĞĞ£¬0ÖÁ6ÁĞ 
 		Month(month, 0, start, 31);
+		//¸ÃÄê2ÔÂ1ÈÕÆğÊ¼ĞÇÆÚ
 		start = Zeller(year, 2, 1);
+		//·¶Î§Îª0ÖÁ5ĞĞ£¬7ÖÁ13ÁĞ 
 		Month(month, 7, start, Feb_days);
+		//¸ÃÄê3ÔÂ1ºÅÆäÊµĞÇÆÚ 
 		start = Zeller(year, 3, 1);
+		//·¶Î§Îª0ÖÁ5ĞĞ£¬14ÖÁ20ÁĞ 
 		Month(month, 14, start, 31);
-	
+		
+		//¸ù¾İmonth¾ØÕóÊä³ö½á¹û 
 		for (int i=0; i<6; i++) {
 			for (int j=0; j<21; j++) {
 				if (month[i][j] == 0)
@@ -81,7 +97,7 @@ int main()
 			printf("\n");
 		}
 	
-	
+		//Í¬Àí 
 		printf("       April                  May                   June        \n");
 		printf("Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n");
 		start = Zeller(year, 4, 1);
@@ -106,7 +122,7 @@ int main()
 			printf("\n");
 		}
 	
-	 	
+	 	//Í¬Àí
 		printf("        July                 August              September      \n");
 		printf("Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n");
 		start = Zeller(year, 7, 1);
@@ -131,7 +147,7 @@ int main()
 			printf("\n");
 		}
 	
-	
+		//Í¬Àí
 		printf("      October               November              December      \n");
 		printf("Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa\n");
 		start = Zeller(year, 10, 1);

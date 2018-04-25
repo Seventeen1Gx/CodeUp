@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+//没有捷径，每条道路从头到尾清扫两遍即可 
 
 int main()
 {
@@ -13,8 +14,8 @@ int main()
 		s += sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) );
 	}
 	
-	t = s/20 * 3.6 *2;
-	if ( t/60 - int(t / 60) >= 0.5 )
+	t = s/20 * 3.6 *2;		//乘2是因为来回，t单位为秒 
+	if ( t/60 - int(t / 60) >= 0.5 ) 	//剩余超过30秒，四舍五入进一位 
 		mm = int(t / 60) + 1;
 	else
 		mm = int(t / 60);

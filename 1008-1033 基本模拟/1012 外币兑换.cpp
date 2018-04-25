@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//在汇率最大的那个月兑换即可 
 int main()
 {
 	double n;

@@ -6,7 +6,7 @@ int main()
 	int c, n, i, j;
 	scanf("%d", &c);
 	
-	while (c > 0) {
+	while ( c-- ) {
 		scanf("%d", &n);
 		
 		for ( i=0; i<n; i++ )
@@ -19,8 +19,7 @@ int main()
 					printf("%d\n", a[i][j]);
 				else
 					printf("%d ", a[i][j]);
-		
-		c--;
 	}
+	
 	return 0;
 }

@@ -7,7 +7,7 @@ int main()
 		
 	while ( n!=0 ) {
 		time = 0;
-		a = 0;
+		a = 0;		//当前所处楼层 
 		for ( int i=0; i<n; i++ ) {
 			scanf("%d", &b);
 			if ( b-a > 0)

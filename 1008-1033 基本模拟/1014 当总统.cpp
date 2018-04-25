@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+//冒泡排序 
 void sort(int a[], int n)
 {
 	int i, j, t, flag;
@@ -19,6 +21,10 @@ void sort(int a[], int n)
 	}
 }
 
+
+//要求最少票数，只需挑选人数较小的(n+2)/2个州，
+//每个州再出(a[i]+2)/2票即可
+//故这里用到了排序算法求较小的(n+2)/2个州 
 int main()
 {
 	int n, i, a[101], MinBallot;

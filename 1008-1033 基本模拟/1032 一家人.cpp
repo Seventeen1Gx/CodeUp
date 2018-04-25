@@ -1,5 +1,9 @@
 #include <stdio.h>
+//用双亲表示法的树形结构描该亲属关系，存储在一位数组中
+//下标表示节点标号，元素值表示其父亲标号
+//然后看两人在树中谁距离根节点更远，远的辈分小，相同则同辈 
 
+//清空数组 
 void clear(int a[], int n)
 {
 	for (int i=0; i<n; i++)
@@ -20,11 +24,14 @@ int main()
 			father[a] = b;
 		}
 		
+		
+		//看两人距根节点有多远 
 		a = 1;
-		while ( father[a] ) {
+		while ( father[a] ) {	
 			a = father[a];
 			cnt1++;
 		}
+		
 		a = 2;
 		while ( father[a] ) {
 			a = father[a];

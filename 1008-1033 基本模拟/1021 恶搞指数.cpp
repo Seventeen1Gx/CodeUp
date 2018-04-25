@@ -8,12 +8,12 @@ int main()
 	while ( gets(gift) ) {
 		int i = 0;
 		int index = 0;
-		while ( gift[i] != '\0' ) {
-			if ( gift[i] == '(' )
+		while ( gift[i] != '\0' ) {		//从左至右遍历字符 
+			if ( gift[i] == '(' )		//遇到'('，层数+1 
 				index++;
-			else if ( gift[i] == ')' )
+			else if ( gift[i] == ')' )	//遇到')'，层数-1 
 				index--;
-			else
+			else						//遇到'B',已拿到礼物，退出循环 
 				break;
 			i++;
 		}
