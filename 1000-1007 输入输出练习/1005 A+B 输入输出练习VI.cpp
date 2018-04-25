@@ -4,7 +4,7 @@ int main()
 {
 	int a, sum, n, i;
 	
-	while ( scanf("%d", &n) == 1 ) {
+	while ( scanf("%d", &n) != EOF ) {
 		i = 0;
 		sum = 0;
 		while ( i<n ) {

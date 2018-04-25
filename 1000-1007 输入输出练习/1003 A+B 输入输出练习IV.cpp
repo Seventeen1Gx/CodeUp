@@ -4,8 +4,10 @@ int main()
 {
 	int a, sum, n, i;
 	
-	scanf("%d", &n);
-	while ( n != 0){
+	while ( scanf("%d", &n) ){
+		if (n == 0)
+			break;
+	
 		i = 0;
 		sum = 0;
 		while ( i<n ) {
@@ -14,7 +16,6 @@ int main()
 			i++;
 		}
 		printf("%d\n", sum);
-		scanf("%d", &n);
 	}
 	
 	return 0;

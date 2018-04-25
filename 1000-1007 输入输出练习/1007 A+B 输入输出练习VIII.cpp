@@ -2,11 +2,10 @@
 
 int main()
 {
-	int a, sum, n, m, i, j;
+	int a, sum, n, m, i;
 	scanf("%d", &n);
 	
-	j = 0;
-	while ( j<n ) {
+	while ( n-- ) {
 		scanf("%d", &m);
 		i = 0;
 		sum = 0;
@@ -16,7 +15,7 @@ int main()
 			i++;
 		}
 		printf("%d\n\n", sum);
-		j++;
 	}
+	
 	return 0;
 }
