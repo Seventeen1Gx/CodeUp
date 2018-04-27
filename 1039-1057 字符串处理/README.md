@@ -10,4 +10,4 @@
 int state = OUT;		//初值为OUT，表示在单词外
 ```
 
-state用于在字符数组按序遍历时，跟踪当前访问位置，当`state = OUT`表示在单词外，当`state = IN`表示在单词内。条件`state == OUT && ispha(s[i]) == true`满足时，说明此时进入一个单词，将state置为IN，条件`state == IN && isalpha(s[i]) == false`满足时，说明此时离开一个单词，state置为OUT。
+state用于在字符数组按序遍历时，跟踪当前访问位置，当`state = OUT`表示在单词外，当`state = IN`表示在单词内。条件`state == OUT && isalpha(s[i]) == true`满足时，说明此时进入一个单词，将state置为IN，条件`state == IN && isalpha(s[i]) == false`满足时，说明此时离开一个单词，state置为OUT。
