@@ -9,20 +9,28 @@ main()
 	gets(num);
 	while ( num[0] != '#' ) {
 		cnt = 0;
+		
 		int i;
-		for (i=0; num[i] != '\0'; i++) {
+		//遍历一遍，统计1的个数
+		for (i=0; num[i] != '\0'; i++) {	 
 			if ( num[i] == '1' )
 				cnt++;
-		} 
-		if ( num[i-1] == 'e' && cnt%2 == 0)
-			num[i-1] = '0';
-		if ( num[i-1] == 'e' && cnt%2 == 1)
-			num[i-1] = '1';
-		if ( num[i-1] == 'o' && cnt%2 == 0)
-			num[i-1] = '1';
-		if ( num[i-1] == 'o' && cnt%2 == 1)
-			num[i-1] = '0';
+		}
+		//不同情况进行不同处理 
+		if ( num[i-1] == 'e' ) {
+			if ( cnt%2 == 0 )
+				num[i-1] = '0';
+			else
+				num[i-1] = '1';
+		} else {
+			if ( cnt%2 == 0 )
+				num[i-1] = '1';
+			else
+				num[i-1] = '0';
+		}
+		//输出 
 		puts(num);
+		//读入下一组数据 
 		gets(num);
 	}
 	return 0;
