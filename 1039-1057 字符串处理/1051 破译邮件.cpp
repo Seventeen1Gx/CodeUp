@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+//字符变换 
 char revert(int n) {
 	int c;
 	switch (n) {
@@ -38,36 +40,46 @@ main ()
 {
 	int c;
 	scanf("%d", &c);
+	getchar();				//吸收缓存区换行符 
 	
 	char a[101];
 	
-	getchar();
 	while (c--) {
 		gets(a);
 		
 		int i=0, j=0;
 		int n;
+		
+		//遍历所给字符串 
 		while ( a[i] != '\0' ) {
-			if ( a[i] >= '0' && a[i] <= '9' ) {
-				if ( a[i+1] >= '0' && a[i+1] <= '9' ) {
+			if ( a[i] >= '0' && a[i] <= '9' ) {				//遇到数字字符 
+				if ( a[i+1] >= '0' && a[i+1] <= '9' ) {		//说明是两位数字 
+					//处理两位数字字符，转变为整数 
 					n = (a[i] - '0') * 10 + a[i+1] - '0';
+					//结果放在a中 
 					a[j] = revert(n);
 					j++;
-					i += 2;
-				} else {
+					//后移两位
+					i += 2;			 
+				} else {			//说明是一位数字 
+					//处理一位数字字符，转变为整数 
 					n = a[i] - '0';
+					//结果放在a中
 					a[j] = revert(n);
 					j++;
+					//后移一位 
 					i++;
 				}
-			} else if ( a[i] == '#' ) {
+			} else if ( a[i] == '#' ) {			//需转变空格 
 				a[j] = ' ';
 				j++;
 				i++;
-			} else
+			} else								//遇到'-'忽略 
 				i++;
 		}
+		//添加结尾'\0' 
 		a[j] = '\0';
+		//输出结果 
 		puts(a);		
 	}
 	
