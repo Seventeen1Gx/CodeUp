@@ -40,14 +40,14 @@ EOF只能出现在第一个录入参数，否则程序中断。
 while ( scanf("%s", str) != EOF ) {
     // To do something
 }
-while ( gets(str) != EOF ) {
+while ( gets(str) != NULL ) {
     // To do something
 }
 ```
 
 注：scanf()和gets()都可以用来输入字符串，但在使用上有所差别。
 
-gets()以回车结束读取，使用'\0'结尾，回车符'\n'被舍弃没有遗留在缓冲区。
+gets()以回车结束读取，使用'\0'结尾，回车符'\n'被舍弃没有遗留在缓冲区。gets()读到EOF或读入错误返回NULL。
 
 scanf()以空格或回车符结束读取，结尾自动加上'\0'，空格或回车符会遗留在缓冲区。
 
