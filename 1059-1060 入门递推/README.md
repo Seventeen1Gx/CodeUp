@@ -12,7 +12,7 @@
 
 每次贴完，一种情况，剩下的空白地板又构成新的子问题。
 
-故递推公式为![](https://github.com/Seventeen1Gx/BlogPicture/raw/master/CodeUp/%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/2018-04-30_21-14-00.png)
+故递推公式为![](https://github.com/Seventeen1Gx/BlogPicture/raw/master/CodeUp/%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/1059%20%E8%B4%B4%E7%93%B7%E7%A0%96.png)
 
 F(n)表示给2\*n的地板贴瓷砖的铺设方法数。
 
@@ -38,7 +38,7 @@ F(n)表示给2\*n的地板贴瓷砖的铺设方法数。
 
 ①→F（n）= 3 * F（n - 2）+ 2 * ③ = 3 * F（n - 2） + 2 * （F（n - 1）- F（n - 2））
 
-故递推公式为![](https://github.com/Seventeen1Gx/BlogPicture/raw/master/CodeUp/%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/2018-04-30_21-14-53.png)
+故递推公式为![](https://github.com/Seventeen1Gx/BlogPicture/raw/master/CodeUp/%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/1060%20%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%A1%88.png)
 
 ---
 
