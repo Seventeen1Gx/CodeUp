@@ -1,3 +1,6 @@
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 # 从一些题目中得到的启发
 
 递推有时要往前推两个子问题分析。（双项递推）
