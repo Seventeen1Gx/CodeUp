@@ -1,5 +1,8 @@
 #include <stdio.h>
+//递推公式见本页面下README.md
 
+
+//对于2*n的地板有多少中铺设方案 
 int F(int n)
 {
 	if (n==1) {
