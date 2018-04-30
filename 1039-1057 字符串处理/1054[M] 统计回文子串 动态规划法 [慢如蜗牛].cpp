@@ -15,7 +15,6 @@ int main()
 	while ( gets(a) ) {
 		int len = strlen(a);
 		
-		
 		//tag[j][j+i]是按对角线遍历的 
 		//i表示正对角线标号，j表示行号 
 		for (int i = 0; i < len; i++) 
@@ -27,22 +26,21 @@ int main()
 						tag[j][j + i] = true;
 					else
 						tag[j][j + i] = false;
+				} else {						//第三种情况 
+					if ( a[j] == a[j+i] && tag[j+1][j+i-1] ) //在回文串基础上两边加相同字符，那也是一个回文串 
+						tag[j][j+i] = true;
+					else
+						tag[j][j+i] = false;
 				} 
-			} 
-		
-		for (int i = 0; i < len; i++)
-			for (int j = i; j < len; j++) {
-				if ( i == j )
-					tag[i][j] = true;
-				else if ( i == j - 1 && s[i] == s[j] )
-					tag[i][j] = true;
-				else if ( i == j - 1 && s[i] != s[j] )
-					tag[i][j] = false;
-				else if ( s[i] == s[j] && tag[i+1][j-1] )
-					tag[i][j] = true;
-				else
-					tag[i][j]
-				
-			}  
+			}
+			
+			//遍历矩阵tag，统计回文子串数目
+			int cnt = 0;
+			for (int i = 0; i < len; i++)
+				for (int j = i; j < len; j++)
+					if (tag[i][j])
+						cnt++;
+						
+			printf("%d\n", cnt);
 	}
-} 
+}

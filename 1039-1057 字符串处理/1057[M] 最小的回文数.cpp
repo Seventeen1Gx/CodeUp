@@ -1,5 +1,4 @@
 /*
-注意 用字符串处理整数时候进位问题   '9' + 1 不会帮你进位
 此题特殊在  3993  9999 这样的数 
 */
 #include <stdio.h>
@@ -7,52 +6,49 @@
 
 const int MAXSIZE = 10000;
 
-//int Judge(char s[], int n)
-//{
-//	for (int i=0, j=n-1; i<j; i++, j--)
-//		if ( s[i] != s[j] )
-//			return 0;
-//	return 1;
-//}
-
 int main()
 {
-	char s[MAXSIZE+2];
+	char s[MAXSIZE+2];			//+2是考虑到末尾\0和结果进位的情况 
 	
 	while ( gets(s) ) {
 		int len = strlen(s);
 		
 		int i, j;
-		int flag = 1;
+		//将左半边镜面投射到右半边
+		//flag记录所得回文数与原数的大小变化情况
+		//1表示小于或等于，0表示大于 
+		int flag = 1; 
 		for (i=0, j=len-1; i<j; i++, j--) {
 			if (s[i] < s[j])
-				flag = 1;                    //flag保存的是最靠中间的不等状态 
+				flag = 1;                 
 			else if (s[i] > s[j])
 				flag = 0;
 			s[j] = s[i];
 		} 
 		
+		//标记是否增加一位 
 		int flag2 = 0;
 		
-		if ( flag ) {          //回文或者前半截小 
+		//flag为1，说明新得回文数小于或等于原数 
+		if ( flag ) {           
 			while (1) {
-				if (i == j) {
+				if (i == j) {			//只需处理一位 
 					s[i]++;
-					if ( s[i] <= '9' )
+					if ( s[i] <= '9' )	//无进位 
 						break;
 					s[i] = '0';
 					i++;
 					j--;
-				} else {
+				} else {				//需要处理两位 
 					s[i]++;
 					s[j]++;
-					if ( s[i] <= '9' )
+					if ( s[i] <= '9' )	//无进位 
 						break;
 					s[i] = s[j] = '0';
 					i++;
 					j--;
 				}
-				if (j < 0 ) {
+				if (j < 0 ) {			//增加一位 
 					flag2 = 1;
 					break;
 				}
