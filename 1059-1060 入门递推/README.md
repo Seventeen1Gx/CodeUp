@@ -1,6 +1,3 @@
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
 # 从一些题目中得到的启发
 
 递推有时要往前推两个子问题分析。（双项递推）
@@ -15,13 +12,7 @@
 
 每次贴完，一种情况，剩下的空白地板又构成新的子问题。
 
-故递推公式为
-
-$$ F(n)=\begin{cases} 
-		1, & n=1\\ 
-		3, & n=2\\
-		1\*F(n-1) +2\*F(n-2), & n>2
-	\end{cases} $$
+故递推公式为![](https://github.com/Seventeen1Gx/BlogPicture/raw/master/CodeUp/%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/2018-04-30_21-14-00.png)
 
 F(n)表示给2\*n的地板贴瓷砖的铺设方法数。
 
@@ -47,13 +38,7 @@ F(n)表示给2\*n的地板贴瓷砖的铺设方法数。
 
 ①→F（n）= 3 * F（n - 2）+ 2 * ③ = 3 * F（n - 2） + 2 * （F（n - 1）- F（n - 2））
 
-故递推公式为
-
-$$ F(n)=\begin{cases} 
-		3, & n=1\\ 
-		7, & n=2\\
-		3\*F(n-2) +2\*(F(n-1)-F(n-2)), & n>2
-	\end{cases} $$
+故递推公式为![](https://github.com/Seventeen1Gx/BlogPicture/raw/master/CodeUp/%E9%80%92%E6%8E%A8%E5%85%AC%E5%BC%8F/2018-04-30_21-14-53.png)
 
 ---
 
