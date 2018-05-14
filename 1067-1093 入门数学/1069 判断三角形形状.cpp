@@ -9,6 +9,7 @@ int main()
 	while (t--) {
 		scanf("%d %d %d", &a, &b, &c);
 		
+		//先利用冒泡排序从小到大排列abc 
 		if (a>b) {
 			temp = a;
 			a = b;
@@ -25,6 +26,7 @@ int main()
 			b = temp;
 		}
 		
+		//判断呗 
 		int flag = 0;
 		if ( a*a + b*b == c*c ) {
 			printf("good\n");

@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//ц╟ещеепР 
 void sort(int a[], int n)
 {
 	int t;
@@ -29,7 +30,9 @@ int main()
 		for (int i=0; i<n; i++)
 			scanf("%d", &a[i]);
 		
+		//еепР 
 		sort(a, n);
+		
 		int flag = 1;
 		for (int i=1; i<n; i++) {
 			if ( a[i-1] != a[i] ) {

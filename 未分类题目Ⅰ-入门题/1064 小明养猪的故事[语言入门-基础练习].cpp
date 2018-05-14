@@ -1,4 +1,5 @@
 #include <stdio.h>
+//其实是一个斐波那契数列问题 
 
 int main() 
 {
@@ -18,7 +19,7 @@ int main()
 			printf("%d\n", b);
 		else {
 			for (int i=0; i<n-2; i++) {
-				c = a + b;      //昨天的猪保留下来和前天所生小猪到昨天又生的新猪 
+				c = a + b;      			//a与b双针移动，始终分别指向当前项的前两项 
 				a = b; 
 				b = c;
 			}
