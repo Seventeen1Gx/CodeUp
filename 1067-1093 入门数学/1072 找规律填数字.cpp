@@ -7,6 +7,7 @@ int main()
 	
 	while (a!=0 || b!=0 || c!=0 || d!=0 || e!=0) {
 		
+		//判断是哪种数列 
 		int type = 0;
 		if ( (b-a)==(c-b) && (c-b) == (d-c) && (d-c) == (e-d) ) {
 			 type = 1;
@@ -17,6 +18,7 @@ int main()
 		
 		int intval, q, f;
 		switch (type) {
+			//等差数列 
 			case 1:
 				intval = b-a;
 				for (int i=1; i<=5; i++)
@@ -25,7 +27,7 @@ int main()
 					else
 						printf(" %d", e + i * intval);
 				break;
-			
+			//等比数列 
 			case 2:
 				q = b/a;
 				for (int i=1; i<=5; i++) {
@@ -36,7 +38,7 @@ int main()
 						printf(" %d", e );
 				}
 				break;
-				
+			//斐波那契数列	
 			case 3: 
 				for (int i=1; i<=5; i++) {
 					f = d + e;

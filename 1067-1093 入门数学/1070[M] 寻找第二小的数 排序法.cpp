@@ -24,7 +24,7 @@ int main()
 	int c;
 	scanf("%d", &c);
 	
-	int n, a[10], min = 100, submin = 100;
+	int n, a[10];
 	while (c--) {
 		scanf("%d", &n);
 		for (int i=0; i<n; i++)

@@ -17,5 +17,5 @@ a ^ b = b ^ a			//交换律
 
 如下图，这是一个斐波那契数列问题。
 
-![]()
+![](https://github.com/Seventeen1Gx/BlogPicture/raw/master/CodeUp/%E4%B8%80%E4%BA%9B%E5%9B%BE%E7%A4%BA/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.png)
 
