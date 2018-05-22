@@ -1,4 +1,5 @@
 #include <stdio.h>
+//从1000开始一个个数字开始试验即可 
 
 int main()
 {

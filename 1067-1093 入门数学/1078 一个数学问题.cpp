@@ -10,9 +10,10 @@ int main()
 	scanf("%d %d", &n, &m);
 	
 	int i=1;
-	while ( m!=0 || n!=n ) {
+	while ( m!=0 || n!=0 ) {
 		
 		int cnt = 0;
+		//按题意穷举 
 		for (a=1; a<n; a++)
 			for (b=a+1; b<n; b++) {
 				value1 = ( a*a + b*b + m) / ( a*b );

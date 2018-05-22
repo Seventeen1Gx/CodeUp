@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
+//按题意产生数组即可 
 void Fun(int a[], int n)
 {
 	a[0] = 1;
