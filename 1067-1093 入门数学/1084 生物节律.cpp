@@ -1,4 +1,5 @@
 #include <stdio.h>
+//天数的起点为年初 
 
 int main()
 {
@@ -10,7 +11,9 @@ int main()
 		int days;
 		int x;
 		
+		//确定一个，再去试探剩下两个
 		for ( x=0; ; x++) {
+			//days表示体力达到某次高峰时距离年初的天数 
 			days = x * 23 + p;
 			if ( (days-e)%28==0 && (days-i)%33==0 && days>d ) 
 				goto quit;
