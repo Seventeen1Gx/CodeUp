@@ -1,27 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
-//反转字符串a从n到m的部分 
-void reverse(char a[], int n, int m)
+//左移一位
+void rotate(char s[], int n)
 {
-	char t;
-	while ( n<m ) {
-		t = a[n];
-		a[n] = a[m];
-		a[m] = t;
-		n++;
-		m--;		
+	char t = s[0];
+	for (int i = 1; i < n; i++) {
+		s[i-1] = s[i];
 	}
-}
-
-//旋转字符串a 
-void rotate(char a[], int n, int p)
-{
-	reverse(a, 0, p);				//反转0到p 
-	reverse(a, p+1, n-1);			//反转p+1到n-1 
-	reverse(a, 0, n-1);				//反转整个字符串 
-}
-
+	s[n-1] = t;
+} 
+ 
 int main()
 {
 	int t, n, minpos;
@@ -33,14 +22,14 @@ int main()
 		scanf("%s", s);
 		getchar();					//吸收缓存区换行符
 		
-		//初始化"擂台" 
+		//初始化"擂台"，放上原字符串 
 		strcpy(min, s);
-		minpos = 0;
+		minpos = 0;				//记录最小字符串出现的位置下标 
 		
 		 
-		for (int i = 0; i < n - 1; i++) {		//循环左移n位得到原串，这里不考虑了 
+		for (int i = 0; i < n - 1; i++) {		
 			//每次循环左移一位
-			rotate(s, n, 0);
+			rotate(s, n);
 			if ( strcmp(s, min) < 0 ) {
 				strcpy(min, s);
 				minpos = i + 1;
