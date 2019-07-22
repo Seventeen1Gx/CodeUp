@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//输入结束标志为输入一组0个元素的数据 
 int main()
 {
 	int a, sum, n, i;

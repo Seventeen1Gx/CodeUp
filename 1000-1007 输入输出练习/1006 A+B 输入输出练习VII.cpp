@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//没有说明输入的结束标志 
 int main()
 {
 	int a, b;

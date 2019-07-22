@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//说明了具体的输入行数n
 int main()
 {
 	int a, b, n;

@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//没有说明结束标志，则利用EOF判断结束 
 int main()
 {
 	int a, sum, n, i;

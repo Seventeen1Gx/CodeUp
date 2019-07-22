@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//输入结束是跳出标志
 int main()
 {
 	int a, b;

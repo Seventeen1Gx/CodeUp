@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//说明了输入数据的组数 
 int main()
 {
 	int a, sum, n, m, i;
